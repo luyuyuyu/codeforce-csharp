@@ -1,0 +1,17 @@
+using System;
+
+class A791 {
+	public static void Main() {
+		var input = Console.ReadLine().Split();
+		var LWeight = int.Parse(input[0]);
+		var BWeight = int.Parse(input[1]);
+		var year = 0;
+		while (LWeight <= BWeight) {
+			LWeight *= 3;
+			BWeight *= 2;
+			++year;
+		}
+		Console.WriteLine(year);
+	}
+}
+	
