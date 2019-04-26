@@ -1,0 +1,21 @@
+//clockwise+anti=10 if move >5, move = 10-5
+//0-1=1 || 9
+//0-2=2 || 8
+using System;
+
+class A540 {
+	public static int eachmove(int a, int b) {
+		return Math.Min(Math.Abs(a - b), 10 - Math.Abs(a - b));
+	}
+	
+	public static void Main() {
+		var n = int.Parse(Console.ReadLine());
+		var need = Console.ReadLine();
+		var now = Console.ReadLine();
+		var answer = 0;
+		for (int i = 0; i < n; ++i) {
+			answer += eachmove(need[i] - '0', now[i] - '0');
+		}
+		Console.WriteLine(answer);
+	}
+}
